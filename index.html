@@ -192,6 +192,23 @@ form .btn{width:100%;margin-top:4px}
 .again{background:none;border:0;font:700 14px var(--b);color:var(--muted);text-decoration:underline;min-height:44px;margin-top:6px;cursor:pointer}
 #f-send[disabled]{opacity:.6;cursor:wait}
 @media (max-width:420px){.slots{grid-template-columns:1fr 1fr}}
+.step{position:relative;padding-left:44px;margin-bottom:22px}
+.step .lbl{font-size:15px;margin-bottom:10px;min-height:30px;display:flex;align-items:center}
+.num{position:absolute;left:0;top:-1px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--yellow);display:grid;place-items:center;font:700 16px var(--h);font-style:normal}
+.step::before{content:"";position:absolute;left:14px;top:36px;bottom:-16px;width:2px;background:var(--line)}
+.step:last-of-type::before{display:none}
+.step.done .num{background:var(--yellow);color:var(--navy-2)}
+.step .field{margin-bottom:12px}
+.ages{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
+.ages label{margin:0;cursor:pointer;position:relative}
+.ages input{position:absolute;opacity:0;width:1px;height:1px}
+.ages span{display:flex;align-items:center;justify-content:center;min-height:46px;border:1.5px solid #C9D0DB;border-radius:10px;font-weight:800;font-size:16px}
+.ages input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+.ages input:focus-visible+span{outline:3px solid var(--yellow-2);outline-offset:2px}
+.field.bad .ages span{border-color:var(--red)}
+.slots .ghost span{border-style:dashed;color:#A6AEBB;background:#FAFBFC}
+.slots .ghost{cursor:default}
+@media (max-width:520px){.ages{grid-template-columns:repeat(5,1fr)}.step{padding-left:40px}}
 /* faq */
 .faq{max-width:860px;margin:36px auto 0}
 details{border-bottom:1px solid var(--line)}
@@ -433,26 +450,27 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     </div>
     <div>
       <form id="lead" novalidate>
-        <div class="f-row">
-          <div class="field" data-f="child"><label for="f-child"><span lang="en">Child's name</span><span lang="ru">Имя ребёнка</span></label><input id="f-child" name="child" autocomplete="off" maxlength="60" required aria-describedby="e-child">
-            <p class="f-msg" id="e-child"><span lang="en">Enter your child's name</span><span lang="ru">Напишите имя ребёнка</span></p></div>
-          <div class="field" data-f="age"><label for="f-age"><span lang="en">Age</span><span lang="ru">Возраст</span></label>
-            <select id="f-age" name="age" required aria-describedby="e-age"><option value="" data-en="Select" data-ru="Выберите">Select</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option></select>
-            <p class="f-msg" id="e-age"><span lang="en">Choose the age</span><span lang="ru">Выберите возраст</span></p></div>
-        </div>
-        <div class="field" data-f="location"><span class="lbl" id="l-loc"><span lang="en">Location</span><span lang="ru">Площадка</span></span>
+        <div class="field step" data-f="age"><span class="lbl" id="l-age"><i class="num">1</i><span lang="en">Child's age</span><span lang="ru">Возраст ребёнка</span></span>
+          <div class="ages" role="radiogroup" aria-labelledby="l-age" aria-describedby="e-age"><label><input type="radio" name="age" value="5"><span>5</span></label><label><input type="radio" name="age" value="6"><span>6</span></label><label><input type="radio" name="age" value="7"><span>7</span></label><label><input type="radio" name="age" value="8"><span>8</span></label><label><input type="radio" name="age" value="9"><span>9</span></label><label><input type="radio" name="age" value="10"><span>10</span></label><label><input type="radio" name="age" value="11"><span>11</span></label><label><input type="radio" name="age" value="12"><span>12</span></label><label><input type="radio" name="age" value="13"><span>13</span></label></div>
+          <p class="f-msg" id="e-age"><span lang="en">Choose the age</span><span lang="ru">Выберите возраст</span></p></div>
+        <div class="field step" data-f="location"><span class="lbl" id="l-loc"><i class="num">2</i><span lang="en">Location</span><span lang="ru">Площадка</span></span>
           <div class="seg" role="radiogroup" aria-labelledby="l-loc" aria-describedby="e-location">
             <label><input type="radio" name="location" value="eg"><span>Elk Grove Village</span></label>
             <label><input type="radio" name="location" value="rm"><span>Rolling Meadows</span></label>
           </div>
           <p class="f-msg" id="e-location"><span lang="en">Choose a location</span><span lang="ru">Выберите площадку</span></p></div>
-        <div class="field" data-f="slot" id="slot-field"><span class="lbl" id="l-slot"><span lang="en">First free session</span><span lang="ru">Первая бесплатная тренировка</span></span>
-          <p class="slot-hint" id="slot-hint"><span lang="en">Choose the age and location, and we'll show your group's days.</span><span lang="ru">Выберите возраст и площадку — покажем дни вашей группы.</span></p>
+        <div class="field step" data-f="slot" id="slot-field"><span class="lbl" id="l-slot"><i class="num">3</i><span lang="en">Day and time of the free session</span><span lang="ru">День и время бесплатной тренировки</span></span>
+          <p class="slot-hint" id="slot-hint"><span lang="en">Choose steps 1 and 2 — your group's days will appear here.</span><span lang="ru">Выберите шаги 1 и 2 — здесь появятся дни вашей группы.</span></p>
           <p class="slot-group" id="slot-group" hidden></p>
           <div class="slots" id="slots" role="radiogroup" aria-labelledby="l-slot" aria-describedby="e-slot"></div>
           <p class="f-msg" id="e-slot"><span lang="en">Choose a day</span><span lang="ru">Выберите день</span></p></div>
-        <div class="field" data-f="phone"><label for="f-phone"><span lang="en">Parent's phone (WhatsApp)</span><span lang="ru">Телефон родителя (WhatsApp)</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(224) 555-0123" maxlength="22" required aria-describedby="e-phone">
-          <p class="f-msg" id="e-phone"><span lang="en">Enter a phone number, e.g. (224) 555-0123</span><span lang="ru">Напишите номер, например (224) 555-0123</span></p></div>
+        <div class="step"><span class="lbl"><i class="num">4</i><span lang="en">Contacts</span><span lang="ru">Контакты</span></span>
+          <div class="f-row">
+            <div class="field" data-f="child"><label for="f-child"><span lang="en">Child's name</span><span lang="ru">Имя ребёнка</span></label><input id="f-child" name="child" autocomplete="off" maxlength="60" required aria-describedby="e-child">
+              <p class="f-msg" id="e-child"><span lang="en">Enter your child's name</span><span lang="ru">Напишите имя ребёнка</span></p></div>
+            <div class="field" data-f="phone"><label for="f-phone"><span lang="en">Parent's phone (WhatsApp)</span><span lang="ru">Телефон родителя (WhatsApp)</span></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(224) 555-0123" maxlength="22" required aria-describedby="e-phone">
+              <p class="f-msg" id="e-phone"><span lang="en">Enter a phone number, e.g. (224) 555-0123</span><span lang="ru">Напишите номер, например (224) 555-0123</span></p></div>
+          </div></div>
         <div class="hp" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" name="company" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn-y" type="submit" id="f-send"><span lang="en">Book free session</span><span lang="ru">Записаться бесплатно</span></button>
         <p class="form-note"><span lang="en">We use your phone only to confirm the session on WhatsApp.</span><span lang="ru">Телефон нужен только чтобы подтвердить тренировку в WhatsApp.</span></p>
@@ -609,14 +627,23 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
         if(s[0]===d.getDay()&&!(i===0&&now.h>+s[1].split(':')[0]-2))out.push({g:g.id,date:d,from:s[1],to:s[2],place:s[3]})})})}
     out.sort(function(a,b){return a.date-b.date||a.from.localeCompare(b.from)});return out.slice(0,6)}
   function locV(){return (form.querySelector('[name=location]:checked')||{}).value}
-  function pickGroups(){var loc=locV(),age=+form.age.value;if(!loc||!age)return null;
+  function ageV(){return (form.querySelector('[name=age]:checked')||{}).value||''}
+  function pickGroups(){var loc=locV(),age=+ageV();if(!loc||!age)return null;
     return GROUPS[loc].filter(function(g){return age>=g.min&&age<=g.max})}
   var current=[];
+  function markSteps(){var st=form.querySelectorAll('.step');
+    st[0].classList.toggle('done',!!ageV());st[1].classList.toggle('done',!!locV());
+    st[2].classList.toggle('done',!!form.querySelector('[name=slot]:checked'));
+    st[3].classList.toggle('done',!!form.child.value.trim()&&phoneOk(form.phone.value))}
+  form.addEventListener('change',function(e){if(e.target.name==='slot')markSteps()});
+  form.addEventListener('input',function(){markSteps()});
   function key(c){return iso(c.date)+'|'+c.from+'|'+c.g}
   function renderSlots(){
     var box=document.getElementById('slots'),hint=document.getElementById('slot-hint'),gp=document.getElementById('slot-group'),T=L[lg()];
     var keep=(form.querySelector('[name=slot]:checked')||{}).value,gs=pickGroups();box.innerHTML='';
-    if(!gs){hint.hidden=false;gp.hidden=true;current=[];return}
+    markSteps();
+    if(!gs){hint.hidden=false;gp.hidden=true;current=[];
+      T.days.slice(1,4).forEach(function(dn){var g=document.createElement('label');g.className='ghost';g.setAttribute('aria-hidden','true');g.innerHTML='<span>'+dn+' —<small>--:--</small></span>';box.appendChild(g)});return}
     hint.hidden=true;gp.hidden=false;
     gp.textContent=T.group+': '+gs.map(function(g){return g.id}).join(' / ')+(locV()==='rm'?T.rmNote:'');
     current=upcoming(gs);
@@ -626,9 +653,10 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     var o=document.createElement('label');o.className='wide';o.innerHTML='<input type="radio" name="slot" value="other"><span>'+T.other+'</span>';box.appendChild(o);
     if(keep){var k=box.querySelector('input[value="'+keep+'"]');if(k)k.checked=true}
   }
-  form.age.addEventListener('change',renderSlots);
+  form.querySelectorAll('[name=age]').forEach(function(r){r.addEventListener('change',renderSlots)});
   form.querySelectorAll('[name=location]').forEach(function(r){r.addEventListener('change',renderSlots)});
   document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',renderSlots)});
+  renderSlots();
 
   // phone: US numbers shown as (224) 555-0123; a number starting with + (not +1) is kept as international
   function digits(v){return v.replace(/\D/g,'')}
@@ -640,10 +668,10 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
   function setBad(name,bad){var f=form.querySelector('[data-f="'+name+'"]');f.classList.toggle('bad',bad);
     var el=f.querySelector('input:not([type=radio]),select');if(el)el.setAttribute('aria-invalid',bad?'true':'false')}
   function check(){var bad=[];
-    if(!form.child.value.trim())bad.push('child');
-    if(!form.age.value)bad.push('age');
+    if(!ageV())bad.push('age');
     if(!locV())bad.push('location');
-    else if(form.age.value&&!form.querySelector('[name=slot]:checked'))bad.push('slot');
+    else if(ageV()&&!form.querySelector('[name=slot]:checked'))bad.push('slot');
+    if(!form.child.value.trim())bad.push('child');
     if(!phoneOk(form.phone.value))bad.push('phone');
     ['child','age','location','slot','phone'].forEach(function(n){setBad(n,bad.indexOf(n)>-1)});
     return bad}
@@ -666,7 +694,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     var place=x?x.place:(loc==='eg'?EG:null);
     var whenTxt=x?dayTxt(x.date)+' · '+tRange(x.from,x.to):T.otherWhen;
     var placeTxt=place?place.name:'Rolling Meadows: Kimball Hill (Tue) / Conyers (Thu, Fri)';
-    var lead={child:child,age:form.age.value,location:loc==='eg'?'Elk Grove Village':'Rolling Meadows',group:group,
+    var lead={child:child,age:ageV(),location:loc==='eg'?'Elk Grove Village':'Rolling Meadows',group:group,
       date:x?iso(x.date):'',time:x?x.from+'–'+x.to:'',place:placeTxt,phone:phone,lang:lang,company:form.company.value,page:location.href.slice(0,200)};
     var ru=lang==='ru';
     var msg=(ru?'Здравствуйте! Записываю ребёнка на бесплатную тренировку StaticX.':'Hi! I\'m booking a free StaticX session.')+'\n'+
