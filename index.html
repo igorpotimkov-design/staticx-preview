@@ -192,13 +192,13 @@ form .btn{width:100%;margin-top:4px}
 .again{background:none;border:0;font:700 14px var(--b);color:var(--muted);text-decoration:underline;min-height:44px;margin-top:6px;cursor:pointer}
 #f-send[disabled]{opacity:.6;cursor:wait}
 @media (max-width:420px){.slots{grid-template-columns:1fr 1fr}}
-.step{position:relative;padding-left:44px;margin-bottom:22px}
-.step .lbl{font-size:15px;margin-bottom:10px;min-height:30px;display:flex;align-items:center}
+.fstep{position:relative;padding-left:44px;margin-bottom:22px}
+.fstep .lbl{font-size:15px;margin-bottom:10px;min-height:30px;display:flex;align-items:center}
 .num{position:absolute;left:0;top:-1px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--yellow);display:grid;place-items:center;font:700 16px var(--h);font-style:normal}
-.step::before{content:"";position:absolute;left:14px;top:36px;bottom:-16px;width:2px;background:var(--line)}
-.step:last-of-type::before{display:none}
-.step.done .num{background:var(--yellow);color:var(--navy-2)}
-.step .field{margin-bottom:12px}
+.fstep::before{content:"";position:absolute;left:14px;top:36px;bottom:-16px;width:2px;background:var(--line)}
+.fstep:last-of-type::before{display:none}
+.fstep.done .num{background:var(--yellow);color:var(--navy-2)}
+.fstep .field{margin-bottom:12px}
 .ages{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
 .ages label{margin:0;cursor:pointer;position:relative}
 .ages input{position:absolute;opacity:0;width:1px;height:1px}
@@ -208,7 +208,7 @@ form .btn{width:100%;margin-top:4px}
 .field.bad .ages span{border-color:var(--red)}
 .slots .ghost span{border-style:dashed;color:#A6AEBB;background:#FAFBFC}
 .slots .ghost{cursor:default}
-@media (max-width:520px){.ages{grid-template-columns:repeat(5,1fr)}.step{padding-left:40px}}
+@media (max-width:520px){.ages{grid-template-columns:repeat(5,1fr)}.fstep{padding-left:40px}}
 /* faq */
 .faq{max-width:860px;margin:36px auto 0}
 details{border-bottom:1px solid var(--line)}
@@ -450,21 +450,21 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     </div>
     <div>
       <form id="lead" novalidate>
-        <div class="field step" data-f="age"><span class="lbl" id="l-age"><i class="num">1</i><span lang="en">Child's age</span><span lang="ru">Возраст ребёнка</span></span>
+        <div class="field fstep" data-f="age"><span class="lbl" id="l-age"><i class="num">1</i><span lang="en">Child's age</span><span lang="ru">Возраст ребёнка</span></span>
           <div class="ages" role="radiogroup" aria-labelledby="l-age" aria-describedby="e-age"><label><input type="radio" name="age" value="5"><span>5</span></label><label><input type="radio" name="age" value="6"><span>6</span></label><label><input type="radio" name="age" value="7"><span>7</span></label><label><input type="radio" name="age" value="8"><span>8</span></label><label><input type="radio" name="age" value="9"><span>9</span></label><label><input type="radio" name="age" value="10"><span>10</span></label><label><input type="radio" name="age" value="11"><span>11</span></label><label><input type="radio" name="age" value="12"><span>12</span></label><label><input type="radio" name="age" value="13"><span>13</span></label></div>
           <p class="f-msg" id="e-age"><span lang="en">Choose the age</span><span lang="ru">Выберите возраст</span></p></div>
-        <div class="field step" data-f="location"><span class="lbl" id="l-loc"><i class="num">2</i><span lang="en">Location</span><span lang="ru">Площадка</span></span>
+        <div class="field fstep" data-f="location"><span class="lbl" id="l-loc"><i class="num">2</i><span lang="en">Location</span><span lang="ru">Площадка</span></span>
           <div class="seg" role="radiogroup" aria-labelledby="l-loc" aria-describedby="e-location">
             <label><input type="radio" name="location" value="eg"><span>Elk Grove Village</span></label>
             <label><input type="radio" name="location" value="rm"><span>Rolling Meadows</span></label>
           </div>
           <p class="f-msg" id="e-location"><span lang="en">Choose a location</span><span lang="ru">Выберите площадку</span></p></div>
-        <div class="field step" data-f="slot" id="slot-field"><span class="lbl" id="l-slot"><i class="num">3</i><span lang="en">Day and time of the free session</span><span lang="ru">День и время бесплатной тренировки</span></span>
+        <div class="field fstep" data-f="slot" id="slot-field"><span class="lbl" id="l-slot"><i class="num">3</i><span lang="en">Day and time of the free session</span><span lang="ru">День и время бесплатной тренировки</span></span>
           <p class="slot-hint" id="slot-hint"><span lang="en">Choose steps 1 and 2 — your group's days will appear here.</span><span lang="ru">Выберите шаги 1 и 2 — здесь появятся дни вашей группы.</span></p>
           <p class="slot-group" id="slot-group" hidden></p>
           <div class="slots" id="slots" role="radiogroup" aria-labelledby="l-slot" aria-describedby="e-slot"></div>
           <p class="f-msg" id="e-slot"><span lang="en">Choose a day</span><span lang="ru">Выберите день</span></p></div>
-        <div class="step"><span class="lbl"><i class="num">4</i><span lang="en">Contacts</span><span lang="ru">Контакты</span></span>
+        <div class="fstep"><span class="lbl"><i class="num">4</i><span lang="en">Contacts</span><span lang="ru">Контакты</span></span>
           <div class="f-row">
             <div class="field" data-f="child"><label for="f-child"><span lang="en">Child's name</span><span lang="ru">Имя ребёнка</span></label><input id="f-child" name="child" autocomplete="off" maxlength="60" required aria-describedby="e-child">
               <p class="f-msg" id="e-child"><span lang="en">Enter your child's name</span><span lang="ru">Напишите имя ребёнка</span></p></div>
@@ -631,7 +631,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
   function pickGroups(){var loc=locV(),age=+ageV();if(!loc||!age)return null;
     return GROUPS[loc].filter(function(g){return age>=g.min&&age<=g.max})}
   var current=[];
-  function markSteps(){var st=form.querySelectorAll('.step');
+  function markSteps(){var st=form.querySelectorAll('.fstep');
     st[0].classList.toggle('done',!!ageV());st[1].classList.toggle('done',!!locV());
     st[2].classList.toggle('done',!!form.querySelector('[name=slot]:checked'));
     st[3].classList.toggle('done',!!form.child.value.trim()&&phoneOk(form.phone.value))}
