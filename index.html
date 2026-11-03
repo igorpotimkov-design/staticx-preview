@@ -191,7 +191,7 @@ form .btn{width:100%;margin-top:4px}
 .btn-line:hover{background:var(--paper)}
 .again{background:none;border:0;font:700 14px var(--b);color:var(--muted);text-decoration:underline;min-height:44px;margin-top:6px;cursor:pointer}
 #f-send[disabled]{opacity:.6;cursor:wait}
-@media (max-width:420px){.slots{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.slots{grid-template-columns:1fr 1fr}.slots .ghost:nth-child(3){display:none}}
 .fstep{position:relative;padding-left:44px;margin-bottom:22px}
 .fstep .lbl{font-size:15px;margin-bottom:10px;min-height:30px;display:flex;align-items:center}
 .num{position:absolute;left:0;top:-1px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--yellow);display:grid;place-items:center;font:700 16px var(--h);font-style:normal}
@@ -537,11 +537,11 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     <p class="eyebrow"><span lang="en">Locations</span><span lang="ru">Где мы тренируемся</span></p>
     <h2><span lang="en">Three places near you</span><span lang="ru">Три площадки рядом с вами</span></h2>
     <div class="locs">
-      <div class="loc rv"><span class="city">Elk Grove Village</span><h3>1000 Wellington Ave</h3><p class="days"><span lang="en">Mon–Fri · all groups</span><span lang="ru">Пн–Пт · все группы</span></p><p>Elk Grove Village, IL 60007</p>
+      <div class="loc rv"><span class="city">Elk Grove Village</span><h3>1000 Wellington Ave</h3><p class="days"><span lang="en">Mon–Fri<br>U-8 · U9–U11 · U-11+</span><span lang="ru">Пн–Пт<br>U-8 · U9–U11 · U-11+</span></p><p>Elk Grove Village, IL 60007</p>
         <a class="route" href="https://www.google.com/maps/search/?api=1&query=1000+Wellington+Ave+Elk+Grove+Village+IL+60007" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a></div>
-      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>Kimball Hill Elementary</h3><p class="days"><span lang="en">Tuesday · U5–8 6:45 pm · U8–10 7:45 pm</span><span lang="ru">Вторник · U5–8 18:45 · U8–10 19:45</span></p><p>2905 Meadow Dr, IL 60008</p>
+      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>Kimball Hill Elementary</h3><p class="days"><span lang="en">Tuesday<br><span style="white-space:nowrap">U5–8 · 6:45 pm</span><br><span style="white-space:nowrap">U8–10 · 7:45 pm</span></span><span lang="ru">Вторник<br><span style="white-space:nowrap">U5–8 · 18:45</span><br><span style="white-space:nowrap">U8–10 · 19:45</span></span></p><p>2905 Meadow Dr, IL 60008</p>
         <a class="route" href="https://www.google.com/maps/search/?api=1&query=Kimball+Hill+Elementary+School+2905+Meadow+Dr+Rolling+Meadows+IL" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a></div>
-      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>John G. Conyers Learning Academy</h3><p class="days"><span lang="en">Thursday &amp; Friday · U5–8 6:45 pm · U8–10 7:45 pm</span><span lang="ru">Четверг и пятница · U5–8 18:45 · U8–10 19:45</span></p><p>2800 Central Rd, IL 60008</p>
+      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>John G. Conyers Learning Academy</h3><p class="days"><span lang="en">Thursday &amp; Friday<br><span style="white-space:nowrap">U5–8 · 6:45 pm</span><br><span style="white-space:nowrap">U8–10 · 7:45 pm</span></span><span lang="ru">Четверг и пятница<br><span style="white-space:nowrap">U5–8 · 18:45</span><br><span style="white-space:nowrap">U8–10 · 19:45</span></span></p><p>2800 Central Rd, IL 60008</p>
         <a class="route" href="https://www.google.com/maps/search/?api=1&query=John+G+Conyers+Learning+Academy+2800+Central+Rd+Rolling+Meadows+IL" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a></div>
     </div>
   </div>
