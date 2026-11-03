@@ -209,6 +209,13 @@ form .btn{width:100%;margin-top:4px}
 .slots .ghost span{border-style:dashed;color:#A6AEBB;background:#FAFBFC}
 .slots .ghost{cursor:default}
 @media (max-width:520px){.ages{grid-template-columns:repeat(5,1fr)}.fstep{padding-left:40px}}
+.reviews{background:var(--paper);padding-bottom:clamp(56px,7vw,96px)}
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.rev{background:#fff;border-radius:var(--r);padding:30px 28px;border:1px solid var(--line);position:relative}
+.rev::before{content:"“";position:absolute;top:-6px;left:22px;font:700 90px/1 var(--h);color:var(--yellow)}
+.rev blockquote{font-weight:700;font-size:clamp(19px,2vw,23px);line-height:1.35;margin:22px 0 14px}
+.rev figcaption{color:var(--muted);font-size:14px;font-weight:600}
+@media (max-width:799px){.rev-grid{grid-template-columns:1fr}}
 /* faq */
 .faq{max-width:860px;margin:36px auto 0}
 details{border-bottom:1px solid var(--line)}
@@ -361,14 +368,14 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
         <p class="where">1000 Wellington Ave</p></div>
     </div>
     <div class="panel" id="p-rm" role="tabpanel" aria-labelledby="t-rm" hidden>
-      <div class="slot"><h3 lang="en">Tuesday</h3><h3 lang="ru">Вторник</h3><span class="age">6:45–7:45 pm</span>
-        <ul><li><span>Kimball Hill Elementary School</span></li></ul><p class="where">2905 Meadow Dr</p></div>
-      <div class="slot"><h3 lang="en">Thursday</h3><h3 lang="ru">Четверг</h3><span class="age">6:45–7:45 pm</span>
-        <ul><li><span>John G. Conyers Learning Academy</span></li></ul><p class="where">2800 Central Rd</p></div>
-      <div class="slot"><h3 lang="en">Friday</h3><h3 lang="ru">Пятница</h3><span class="age">6:45–7:45 pm</span>
-        <ul><li><span>John G. Conyers Learning Academy</span></li></ul><p class="where">2800 Central Rd</p></div>
+      <div class="slot"><h3>U5–8</h3><span class="age" lang="en">ages 5–8</span><span class="age" lang="ru">5–8 лет</span>
+        <ul><li><span lang="en">Tuesday · Kimball Hill</span><span lang="ru">Вторник · Kimball Hill</span><span lang="en">6:45–7:45 pm</span><span lang="ru">18:45–19:45</span></li><li><span lang="en">Thursday · Conyers</span><span lang="ru">Четверг · Conyers</span><span lang="en">6:45–7:45 pm</span><span lang="ru">18:45–19:45</span></li><li><span lang="en">Friday · Conyers</span><span lang="ru">Пятница · Conyers</span><span lang="en">6:45–7:45 pm</span><span lang="ru">18:45–19:45</span></li></ul>
+        <p class="where">Kimball Hill — 2905 Meadow Dr · Conyers — 2800 Central Rd</p></div>
+      <div class="slot"><h3>U8–10</h3><span class="age" lang="en">ages 8–10</span><span class="age" lang="ru">8–10 лет</span>
+        <ul><li><span lang="en">Tuesday · Kimball Hill</span><span lang="ru">Вторник · Kimball Hill</span><span lang="en">7:45–8:45 pm</span><span lang="ru">19:45–20:45</span></li><li><span lang="en">Thursday · Conyers</span><span lang="ru">Четверг · Conyers</span><span lang="en">7:45–8:45 pm</span><span lang="ru">19:45–20:45</span></li><li><span lang="en">Friday · Conyers</span><span lang="ru">Пятница · Conyers</span><span lang="en">7:45–8:45 pm</span><span lang="ru">19:45–20:45</span></li></ul>
+        <p class="where">Kimball Hill — 2905 Meadow Dr · Conyers — 2800 Central Rd</p></div>
     </div>
-    <p class="note"><span lang="en">For Rolling Meadows, message us and we'll confirm which age group trains there.</span><span lang="ru">По Rolling Meadows напишите нам, и мы подтвердим, какой возраст там занимается.</span></p>
+    <p class="note"><span lang="en">The first session is free at any location.</span><span lang="ru">Первая тренировка бесплатна на любой площадке.</span></p>
   </div>
 </section>
 
@@ -485,7 +492,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
           <div class="th-row"><span class="k" lang="en">Where</span><span class="k" lang="ru">Где</span><b id="th-place"></b></div>
           <a class="route" id="th-route" href="#" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a>
         </div>
-        <div class="box"><span lang="en">Bring comfortable sports clothes, indoor sneakers and a water bottle.</span><span lang="ru">Возьмите удобную спортивную форму, кроссовки для зала и воду.</span></div>
+        <div class="box"><span lang="en">Bring: indoor soccer shoes (turf or futsal), a water bottle and a size 3 ball. Parents are welcome to watch.</span><span lang="ru">Возьмите: обувь для зала (turf или футзалки), воду и мяч 3-го размера. Родители могут смотреть тренировку.</span></div>
         <div class="th-btns">
           <a class="btn btn-wa" id="th-wa" href="https://wa.me/12247138550" target="_blank" rel="noopener"><span lang="en">Send on WhatsApp</span><span lang="ru">Отправить в WhatsApp</span></a>
           <a class="btn btn-line" id="th-gcal" href="#" target="_blank" rel="noopener"><span lang="en">Add to Google Calendar</span><span lang="ru">В Google Календарь</span></a>
@@ -498,17 +505,28 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
   </div>
 </section>
 
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="en">Parents say</span><span lang="ru">Отзывы родителей</span></p>
+    <h2><span lang="en">From our Instagram</span><span lang="ru">Из нашего Instagram</span></h2>
+    <div class="rev-grid">
+      <figure class="rev rv"><blockquote><span lang="ru">«Лучшая Академия. Лучшие Тренера! Рекомендую»</span><span lang="en">“The best academy. The best coaches! Highly recommend.”</span></blockquote><figcaption><span lang="en">Parent, Instagram comment (translated from Russian)</span><span lang="ru">Родитель, комментарий в Instagram</span></figcaption></figure>
+      <figure class="rev rv"><blockquote><span lang="ru">«Вадим крутой тренер. Рекомендую!»</span><span lang="en">“Vadym is an awesome coach. Highly recommend!”</span></blockquote><figcaption><span lang="en">Parent, Instagram comment (translated from Russian)</span><span lang="ru">Родитель, комментарий в Instagram</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap">
     <p class="eyebrow" style="text-align:center"><span lang="en">Parents ask</span><span lang="ru">Вопросы родителей</span></p>
     <h2 style="text-align:center"><span lang="en">Quick answers</span><span lang="ru">Коротко о главном</span></h2>
     <div class="faq">
       <details><summary><span lang="en">How much does it cost?</span><span lang="ru">Сколько стоит?</span></summary><p><span lang="en">The first session is free. After it, the coach suggests a group or 1-on-1 format for your child and tells you the price in person.</span><span lang="ru">Первая тренировка бесплатна. После неё тренер подскажет формат — группа или индивидуально — и назовёт стоимость на месте.</span></p></details>
-      <details><summary><span lang="en">What ages do you take?</span><span lang="ru">С какого возраста?</span></summary><p><span lang="en">Kids from 5 to 13. In Elk Grove Village we train in three groups: U-8, U9–U11 and U-11+.</span><span lang="ru">Дети от 5 до 13 лет. В Elk Grove Village три группы: U-8, U9–U11 и U-11+.</span></p></details>
+      <details><summary><span lang="en">What ages do you take?</span><span lang="ru">С какого возраста?</span></summary><p><span lang="en">Kids from 5 to 13. Elk Grove Village has three groups: U-8, U9–U11 and U-11+. Rolling Meadows has two: U5–8 and U8–10.</span><span lang="ru">Дети от 5 до 13 лет. В Elk Grove Village три группы: U-8, U9–U11 и U-11+. В Rolling Meadows две: U5–8 и U8–10.</span></p></details>
       <details><summary><span lang="en">My child has never played. Is that OK?</span><span lang="ru">Ребёнок никогда не играл. Можно?</span></summary><p><span lang="en">Yes. We start from the basics and plan every session around the player's level, so beginners settle in fast.</span><span lang="ru">Да. Начинаем с основ и строим тренировку под уровень игрока, поэтому новички быстро втягиваются.</span></p></details>
       <details><summary><span lang="en">Do you do 1-on-1 training?</span><span lang="ru">Есть индивидуальные тренировки?</span></summary><p><span lang="en">Yes, we offer 1-on-1 sessions and small groups. Ask us on WhatsApp and we'll find a time.</span><span lang="ru">Да, есть индивидуальные занятия и мини-группы. Напишите в WhatsApp, подберём время.</span></p></details>
       <details><summary><span lang="en">What happens in winter?</span><span lang="ru">А зимой?</span></summary><p><span lang="en">The indoor season is on, so sessions run whatever the weather.</span><span lang="ru">Сейчас сезон в зале, поэтому тренировки идут при любой погоде.</span></p></details>
-      <details><summary><span lang="en">What should we bring?</span><span lang="ru">Что взять с собой?</span></summary><p><span lang="en">Comfortable sports clothes, indoor sneakers and a water bottle.</span><span lang="ru">Удобную спортивную форму, кроссовки для зала и бутылку воды.</span></p></details>
+      <details><summary><span lang="en">What should we bring?</span><span lang="ru">Что взять с собой?</span></summary><p><span lang="en">Indoor soccer shoes (turf or futsal), a water bottle and a size 3 ball.</span><span lang="ru">Обувь для зала (turf или футзалки), воду и мяч 3-го размера.</span></p></details>
       <details><summary><span lang="en">Can parents watch?</span><span lang="ru">Можно ли родителям смотреть?</span></summary><p><span lang="en">Yes, you're welcome to stay and watch the session.</span><span lang="ru">Да, вы можете остаться и посмотреть тренировку.</span></p></details>
     </div>
   </div>
@@ -521,9 +539,9 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     <div class="locs">
       <div class="loc rv"><span class="city">Elk Grove Village</span><h3>1000 Wellington Ave</h3><p class="days"><span lang="en">Mon–Fri · all groups</span><span lang="ru">Пн–Пт · все группы</span></p><p>Elk Grove Village, IL 60007</p>
         <a class="route" href="https://www.google.com/maps/search/?api=1&query=1000+Wellington+Ave+Elk+Grove+Village+IL+60007" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a></div>
-      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>Kimball Hill Elementary</h3><p class="days"><span lang="en">Tuesday · 6:45–7:45 pm</span><span lang="ru">Вторник · 18:45–19:45</span></p><p>2905 Meadow Dr, IL 60008</p>
+      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>Kimball Hill Elementary</h3><p class="days"><span lang="en">Tuesday · U5–8 6:45 pm · U8–10 7:45 pm</span><span lang="ru">Вторник · U5–8 18:45 · U8–10 19:45</span></p><p>2905 Meadow Dr, IL 60008</p>
         <a class="route" href="https://www.google.com/maps/search/?api=1&query=Kimball+Hill+Elementary+School+2905+Meadow+Dr+Rolling+Meadows+IL" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a></div>
-      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>John G. Conyers Learning Academy</h3><p class="days"><span lang="en">Thursday &amp; Friday · 6:45–7:45 pm</span><span lang="ru">Четверг и пятница · 18:45–19:45</span></p><p>2800 Central Rd, IL 60008</p>
+      <div class="loc rv"><span class="city">Rolling Meadows</span><h3>John G. Conyers Learning Academy</h3><p class="days"><span lang="en">Thursday &amp; Friday · U5–8 6:45 pm · U8–10 7:45 pm</span><span lang="ru">Четверг и пятница · U5–8 18:45 · U8–10 19:45</span></p><p>2800 Central Rd, IL 60008</p>
         <a class="route" href="https://www.google.com/maps/search/?api=1&query=John+G+Conyers+Learning+Academy+2800+Central+Rd+Rolling+Meadows+IL" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a></div>
     </div>
   </div>
@@ -606,12 +624,13 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
       {id:'U-8',min:5,max:8,slots:[[1,'18:00','19:00',EG],[3,'17:00','18:00',EG],[5,'17:00','18:00',EG]]},
       {id:'U9–U11',min:9,max:11,slots:[[1,'16:30','18:00',EG],[2,'16:30','18:00',EG],[4,'16:30','18:00',EG]]},
       {id:'U-11+',min:11,max:13,slots:[[1,'19:00','20:30',EG],[3,'18:00','19:30',EG],[5,'18:00','19:30',EG]]}],
-    rm:[{id:'Rolling Meadows',min:5,max:13,slots:[[2,'18:45','19:45',KH],[4,'18:45','19:45',JC],[5,'18:45','19:45',JC]]}]};
+    rm:[{id:'U5–8',min:5,max:8,slots:[[2,'18:45','19:45',KH],[4,'18:45','19:45',JC],[5,'18:45','19:45',JC]]},
+        {id:'U8–10',min:8,max:10,slots:[[2,'19:45','20:45',KH],[4,'19:45','20:45',JC],[5,'19:45','20:45',JC]]}]};
   var L={en:{days:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],mon:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-             other:'None of these days work for us — find a time on WhatsApp',group:'Group',rmNote:' (we\'ll confirm the age group on WhatsApp)',
+             other:'None of these days work for us — find a time on WhatsApp',group:'Group',rmNote:'',noGroup:'Rolling Meadows trains ages 5–10. For ages 11–13, choose Elk Grove Village.',
              lead:function(){return 'The coach will confirm the session on WhatsApp.'},otherWhen:'We\'ll agree on a day on WhatsApp'},
            ru:{days:['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],mon:['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
-             other:'Эти дни не подходят — подберём время в WhatsApp',group:'Группа',rmNote:' (возраст группы подтвердим в WhatsApp)',
+             other:'Эти дни не подходят — подберём время в WhatsApp',group:'Группа',rmNote:'',noGroup:'В Rolling Meadows занимаются дети 5–10 лет. Для 11–13 лет выберите Elk Grove Village.',
              lead:function(){return 'Тренер подтвердит тренировку в WhatsApp.'},otherWhen:'День согласуем в WhatsApp'}};
   function lg(){return root.getAttribute('data-lang')==='ru'?'ru':'en'}
   function t12(hm){var h=+hm.split(':')[0],m=hm.split(':')[1];return ((h+11)%12+1)+(m==='00'?'':':'+m)+(h<12?' am':' pm')}
@@ -645,7 +664,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     if(!gs){hint.hidden=false;gp.hidden=true;current=[];
       T.days.slice(1,4).forEach(function(dn){var g=document.createElement('label');g.className='ghost';g.setAttribute('aria-hidden','true');g.innerHTML='<span>'+dn+' —<small>--:--</small></span>';box.appendChild(g)});return}
     hint.hidden=true;gp.hidden=false;
-    gp.textContent=T.group+': '+gs.map(function(g){return g.id}).join(' / ')+(locV()==='rm'?T.rmNote:'');
+    gp.textContent=gs.length?T.group+': '+gs.map(function(g){return g.id}).join(' / '):T.noGroup;
     current=upcoming(gs);
     current.forEach(function(x){var lab=document.createElement('label');
       lab.innerHTML='<input type="radio" name="slot" value="'+key(x)+'"><span>'+dayTxt(x.date)+'<small>'+tRange(x.from,x.to)+(gs.length>1?' · '+x.g:'')+(x.place.short?' · '+x.place.short:'')+'</small></span>';
@@ -690,7 +709,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     var T=L[lg()],lang=lg(),loc=locV(),slotV=form.querySelector('[name=slot]:checked').value,x=null;
     current.forEach(function(c){if(key(c)===slotV)x=c});
     var gs=pickGroups(),child=form.child.value.trim(),phone=fmtPhone(form.phone.value);
-    var group=x?x.g:gs.map(function(g){return g.id}).join(' / ');
+    var group=x?x.g:(gs.length?gs.map(function(g){return g.id}).join(' / '):'—');
     var place=x?x.place:(loc==='eg'?EG:null);
     var whenTxt=x?dayTxt(x.date)+' · '+tRange(x.from,x.to):T.otherWhen;
     var placeTxt=place?place.name:'Rolling Meadows: Kimball Hill (Tue) / Conyers (Thu, Fri)';
@@ -709,7 +728,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     document.getElementById('th-place').textContent=placeTxt;
     var rt=document.getElementById('th-route');rt.hidden=!place;if(place)rt.href=place.map;
     var gc=document.getElementById('th-gcal'),ic=document.getElementById('th-ics');gc.hidden=ic.hidden=!x;
-    if(x){var title='StaticX — free soccer session ('+child+')',det='Group '+group+'. Bring sports clothes, indoor sneakers and water. WhatsApp: +1 224-713-8550';
+    if(x){var title='StaticX — free soccer session ('+child+')',det='Group '+group+'. Bring indoor soccer shoes (turf or futsal), water and a size 3 ball. WhatsApp: +1 224-713-8550';
       gc.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+calDate(x.date,x.from)+'/'+calDate(x.date,x.to)+'&ctz=America/Chicago&location='+encodeURIComponent(x.place.name)+'&details='+encodeURIComponent(det);
       var esc=function(v){return v.replace(/\\/g,'\\\\').replace(/[,;]/g,'\\$&')};
       var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//StaticX//Booking//EN','BEGIN:VEVENT','UID:'+Date.now()+'@staticx',
