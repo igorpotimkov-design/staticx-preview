@@ -136,10 +136,10 @@ html[data-lang="en"] [lang="ru"], html[data-lang="ru"] [lang="en"]{display:none!
 .medal{background:#fff;border-radius:var(--r);padding:22px;border:1px solid var(--line)}
 .medal b{font-family:var(--h);font-size:44px;color:var(--navy);display:block;line-height:1;white-space:nowrap}
 .medal span{font-weight:700;color:var(--muted);font-size:15px}
-.leagues{margin-top:26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.leagues p{margin:0;font-weight:700;color:var(--muted);font-size:15px;flex-basis:100%}
-.leagues a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-family:var(--h);font-size:22px}
-.leagues img{width:64px;height:64px;border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.leagues{margin-top:26px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;background:var(--navy);border-radius:var(--r);padding:24px 26px}
+.leagues p{margin:0;font-family:var(--h);text-transform:uppercase;color:var(--yellow);font-size:clamp(24px,2.6vw,32px);line-height:1.1;flex-basis:100%}
+.leagues a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-family:var(--h);font-size:28px}
+.leagues img{width:84px;height:84px;border-radius:50%;box-shadow:0 2px 12px rgba(0,0,0,.35)}
 .res-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
 .res-photo img{width:100%;height:100%;object-fit:cover}
 /* steps */
@@ -443,13 +443,13 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
       <p class="eyebrow"><span lang="en">Results</span><span lang="ru">Результаты</span></p>
       <h2><span lang="en">One year in. Already on the podium.</span><span lang="ru">Год работы — и уже на пьедестале</span></h2>
       <p class="lead"><span lang="en">Our teams finished on the podium of the summer league. More important to us: every kid leaves the field more confident than they came.</span><span lang="ru">Наши команды поднялись на пьедестал летней лиги. Но для нас важнее другое: каждый ребёнок уходит с поля увереннее, чем пришёл.</span></p>
+      <div class="leagues rv"><p><span lang="en">🏆 Champions of the NISL and YSSL leagues</span><span lang="ru">🏆 Чемпионы лиг NISL и YSSL</span></p>
+        <a href="https://www.northernillinoissoccerleague.com/" target="_blank" rel="noopener"><img src="img/league_nisl.png" alt="NISL — Northern Illinois Soccer League" width="84" height="84" loading="lazy"><b>NISL</b></a>
+        <a href="https://www.yssl.org/" target="_blank" rel="noopener"><img src="img/league_yssl.png" alt="YSSL — Young Sportsmen's Soccer League" width="84" height="84" loading="lazy"><b>YSSL</b></a>
+      </div>
       <div class="medals">
         <div class="medal"><b>🥈 U-12</b><span lang="en">2nd place, summer league</span><span lang="ru">2 место, летняя лига</span></div>
         <div class="medal"><b>🥉 U-10</b><span lang="en">3rd place, summer league</span><span lang="ru">3 место, летняя лига</span></div>
-      </div>
-      <div class="leagues rv"><p><span lang="en">Champions and medalists of the NISL and YSSL leagues</span><span lang="ru">Чемпионы и призёры лиг NISL и YSSL</span></p>
-        <a href="https://www.northernillinoissoccerleague.com/" target="_blank" rel="noopener"><img src="img/league_nisl.png" alt="NISL — Northern Illinois Soccer League" width="64" height="64" loading="lazy"><b>NISL</b></a>
-        <a href="https://www.yssl.org/" target="_blank" rel="noopener"><img src="img/league_yssl.png" alt="YSSL — Young Sportsmen's Soccer League" width="64" height="64" loading="lazy"><b>YSSL</b></a>
       </div>
     </div>
   </div>
@@ -533,8 +533,8 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
 <section class="reviews" id="reviews">
   <div class="wrap">
     <p class="eyebrow"><span lang="en">Parents say</span><span lang="ru">Отзывы родителей</span></p>
-    <h2><span lang="en">5.0 ★ on Google — 21 reviews</span><span lang="ru">5.0 ★ в Google — 21 отзыв</span></h2>
-    <p class="lead"><span lang="en">Every review on our Google profile is 5 stars. A few of them, word for word:</span><span lang="ru">Все отзывы в нашем профиле Google — на 5 звёзд. Несколько из них, дословно:</span></p>
+    <h2><span lang="en">★★★★★ on Google</span><span lang="ru">★★★★★ в Google</span></h2>
+    <p class="lead"><span lang="en">Parents give us 5 stars. A few reviews, word for word:</span><span lang="ru">Родители ставят нам 5 звёзд. Несколько отзывов, дословно:</span></p>
     <div class="rev-grid">
       <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>We are very happy with the training at this soccer school! There are two professional coaches who truly know what they’re doing — they offer a personalized approach, smart training, and great motivation. What impressed us the most is that they use the Dutch training system…</blockquote><figcaption>Yuliya S · Google</figcaption></figure>
       <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Були в Connection и Hammers, намного лучше обучение и тренера с огромными знаниями и европейским опытом. Нигде такого не найдете</blockquote><figcaption>Максим Коваленко · Google</figcaption></figure>
@@ -543,7 +543,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
       <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Great football group! My son happily attends every training session. The coaches are very professional, know how to connect with kids, and keep them motivated. In a short time, my child has noticeably improved his skills.</blockquote><figcaption>Азиза Заирова · Google</figcaption></figure>
       <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Прекрасный футбольный клуб! Мой ребенок очень доволен, заинтересован в спорте, благодарю за такую ответственную работу тренера ❤️</blockquote><figcaption>Kateryna Polishchuk · Google</figcaption></figure>
     </div>
-    <p class="rev-more"><a class="btn btn-line" href="https://www.google.com/maps/place/StaticX+Soccer+Academy/@42.0018681,-88.0108521,17z/data=!4m8!3m7!1s0x880fb10a967f933d:0x19d48e8ded2e777c!8m2!3d42.0018681!4d-88.0108521!9m1!1b1!16s%2Fg%2F11xnznygf6" target="_blank" rel="noopener"><span lang="en">Read all 21 reviews on Google</span><span lang="ru">Все 21 отзыв в Google</span></a></p>
+    <p class="rev-more"><a class="btn btn-line" href="https://www.google.com/maps/place/StaticX+Soccer+Academy/@42.0018681,-88.0108521,17z/data=!4m8!3m7!1s0x880fb10a967f933d:0x19d48e8ded2e777c!8m2!3d42.0018681!4d-88.0108521!9m1!1b1!16s%2Fg%2F11xnznygf6" target="_blank" rel="noopener"><span lang="en">Read all reviews on Google</span><span lang="ru">Все отзывы в Google</span></a></p>
   </div>
 </section>
 
