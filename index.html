@@ -19,7 +19,7 @@
 <link rel="preload" as="image" href="img/team_trophy.webp" media="(min-width: 800px)">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"SportsOrganization","@id":"#org","name":"StaticX Soccer Academy","sport":"Soccer","telephone":"+1-224-713-8550","sameAs":["https://www.instagram.com/staticxsocceracademy/"],"logo":"img/logo.png"},
+{"@type":"SportsOrganization","@id":"#org","name":"StaticX Soccer Academy","sport":"Soccer","telephone":"+1-224-713-8550","sameAs":["https://www.instagram.com/staticxsocceracademy/","https://www.google.com/maps/place/StaticX+Soccer+Academy/@42.0018681,-88.0108521,17z/data=!4m6!3m5!1s0x880fb10a967f933d:0x19d48e8ded2e777c!8m2!3d42.0018681!4d-88.0108521!16s%2Fg%2F11xnznygf6"],"logo":"img/logo.png"},
 {"@type":"SportsActivityLocation","name":"StaticX Soccer Academy — Elk Grove Village","parentOrganization":{"@id":"#org"},"telephone":"+1-224-713-8550","address":{"@type":"PostalAddress","streetAddress":"1000 Wellington Ave","addressLocality":"Elk Grove Village","addressRegion":"IL","postalCode":"60007","addressCountry":"US"}},
 {"@type":"SportsActivityLocation","name":"StaticX Soccer Academy — Kimball Hill Elementary School","parentOrganization":{"@id":"#org"},"address":{"@type":"PostalAddress","streetAddress":"2905 Meadow Dr","addressLocality":"Rolling Meadows","addressRegion":"IL","postalCode":"60008","addressCountry":"US"}},
 {"@type":"SportsActivityLocation","name":"StaticX Soccer Academy — John G. Conyers Learning Academy","parentOrganization":{"@id":"#org"},"address":{"@type":"PostalAddress","streetAddress":"2800 Central Rd","addressLocality":"Rolling Meadows","addressRegion":"IL","postalCode":"60008","addressCountry":"US"}}
@@ -136,6 +136,10 @@ html[data-lang="en"] [lang="ru"], html[data-lang="ru"] [lang="en"]{display:none!
 .medal{background:#fff;border-radius:var(--r);padding:22px;border:1px solid var(--line)}
 .medal b{font-family:var(--h);font-size:44px;color:var(--navy);display:block;line-height:1;white-space:nowrap}
 .medal span{font-weight:700;color:var(--muted);font-size:15px}
+.leagues{margin-top:26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.leagues p{margin:0;font-weight:700;color:var(--muted);font-size:15px;flex-basis:100%}
+.leagues a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-family:var(--h);font-size:22px}
+.leagues img{width:64px;height:64px;border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,.18)}
 .res-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
 .res-photo img{width:100%;height:100%;object-fit:cover}
 /* steps */
@@ -215,6 +219,12 @@ form .btn{width:100%;margin-top:4px}
 .rev::before{content:"“";position:absolute;top:-6px;left:22px;font:700 90px/1 var(--h);color:var(--yellow)}
 .rev blockquote{font-weight:700;font-size:clamp(19px,2vw,23px);line-height:1.35;margin:22px 0 14px}
 .rev figcaption{color:var(--muted);font-size:14px;font-weight:600}
+.rev-grid{grid-template-columns:repeat(3,1fr)}
+.rev .stars{color:#f5b301;font-size:18px;letter-spacing:2px;margin-top:10px}
+.rev blockquote{font-size:clamp(16px,1.5vw,18px);font-weight:600}
+.rev-more{margin-top:26px;text-align:center}
+@media (max-width:1020px){.rev-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.rev-grid{grid-template-columns:1fr}}
 @media (max-width:799px){.rev-grid{grid-template-columns:1fr}}
 .faq-more{margin-top:28px;background:var(--paper);border-radius:var(--r);padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .faq-more p{font-weight:700;margin:0;max-width:520px}
@@ -287,7 +297,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#schedule"><span lang="en">Schedule</span><span lang="ru">Расписание</span></a>
-      <a href="#coaches"><span lang="en">Coaches</span><span lang="ru">Тренеры</span></a>
+      <a href="#coaches"><span lang="en">Coaches</span><span lang="ru">Тренера</span></a>
       <a href="#faq"><span lang="en">Parents ask</span><span lang="ru">Вопросы</span></a>
       <a href="#locations"><span lang="en">Locations</span><span lang="ru">Адреса</span></a>
     </nav>
@@ -332,7 +342,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     <div><span lang="en">Ages 5–13</span><span lang="ru">5–13 лет</span><small lang="en">from first steps to U-11+</small><small lang="ru">от первых шагов до U-11+</small></div>
     <div><span lang="en">Small groups</span><span lang="ru">Мини-группы</span><small lang="en">and 1-on-1 sessions</small><small lang="ru">и индивидуально</small></div>
     <div><span lang="en">Ajax method</span><span lang="ru">Система Ajax</span><small lang="en">technique first</small><small lang="ru">сначала техника</small></div>
-    <div><span lang="en">Pro coaches</span><span lang="ru">Тренеры-профи</span><small lang="en">Europa League experience</small><small lang="ru">опыт Лиги Европы</small></div>
+    <div><span lang="en">Pro coaches</span><span lang="ru">Тренера-профи</span><small lang="en">Europa League experience</small><small lang="ru">опыт Лиги Европы</small></div>
   </div>
 </div>
 
@@ -391,7 +401,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
 
 <section id="coaches">
   <div class="wrap">
-    <p class="eyebrow"><span lang="en">Coaches</span><span lang="ru">Тренеры</span></p>
+    <p class="eyebrow"><span lang="en">Coaches</span><span lang="ru">Тренера</span></p>
     <h2><span lang="en">Coached by people who played at the top</span><span lang="ru">Тренируют те, кто играл на высоком уровне</span></h2>
     <div class="coaches">
       <article class="coach rv">
@@ -436,6 +446,10 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
       <div class="medals">
         <div class="medal"><b>🥈 U-12</b><span lang="en">2nd place, summer league</span><span lang="ru">2 место, летняя лига</span></div>
         <div class="medal"><b>🥉 U-10</b><span lang="en">3rd place, summer league</span><span lang="ru">3 место, летняя лига</span></div>
+      </div>
+      <div class="leagues rv"><p><span lang="en">Champions and medalists of the NISL and YSSL leagues</span><span lang="ru">Чемпионы и призёры лиг NISL и YSSL</span></p>
+        <a href="https://www.northernillinoissoccerleague.com/" target="_blank" rel="noopener"><img src="img/league_nisl.png" alt="NISL — Northern Illinois Soccer League" width="64" height="64" loading="lazy"><b>NISL</b></a>
+        <a href="https://www.yssl.org/" target="_blank" rel="noopener"><img src="img/league_yssl.png" alt="YSSL — Young Sportsmen's Soccer League" width="64" height="64" loading="lazy"><b>YSSL</b></a>
       </div>
     </div>
   </div>
@@ -503,7 +517,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
           <div class="th-row"><span class="k" lang="en">Where</span><span class="k" lang="ru">Где</span><b id="th-place"></b></div>
           <a class="route" id="th-route" href="#" target="_blank" rel="noopener"><span lang="en">Get directions →</span><span lang="ru">Маршрут →</span></a>
         </div>
-        <div class="box"><span lang="en">Bring: indoor soccer shoes (turf or futsal), a water bottle and a size 3 ball. Parents are welcome to watch.</span><span lang="ru">Возьмите: обувь для зала (turf или футзалки), воду и мяч 3-го размера. Родители могут смотреть тренировку.</span></div>
+        <div class="box"><span lang="en">Bring: turf or futsal shoes, a water bottle and a size 3 ball. Parents are welcome to watch.</span><span lang="ru">Возьмите: turf or futsal shoes, воду и мяч 3-го размера. Родители могут смотреть тренировку.</span></div>
         <div class="th-btns">
           <a class="btn btn-wa" id="th-wa" href="https://wa.me/12247138550" target="_blank" rel="noopener"><span lang="en">Send on WhatsApp</span><span lang="ru">Отправить в WhatsApp</span></a>
           <a class="btn btn-line" id="th-gcal" href="#" target="_blank" rel="noopener"><span lang="en">Add to Google Calendar</span><span lang="ru">В Google Календарь</span></a>
@@ -519,11 +533,17 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
 <section class="reviews" id="reviews">
   <div class="wrap">
     <p class="eyebrow"><span lang="en">Parents say</span><span lang="ru">Отзывы родителей</span></p>
-    <h2><span lang="en">From our Instagram</span><span lang="ru">Из нашего Instagram</span></h2>
+    <h2><span lang="en">5.0 ★ on Google — 21 reviews</span><span lang="ru">5.0 ★ в Google — 21 отзыв</span></h2>
+    <p class="lead"><span lang="en">Every review on our Google profile is 5 stars. A few of them, word for word:</span><span lang="ru">Все отзывы в нашем профиле Google — на 5 звёзд. Несколько из них, дословно:</span></p>
     <div class="rev-grid">
-      <figure class="rev rv"><blockquote><span lang="ru">«Лучшая Академия. Лучшие Тренера! Рекомендую»</span><span lang="en">“The best academy. The best coaches! Highly recommend.”</span></blockquote><figcaption><span lang="en">Parent, Instagram comment (translated from Russian)</span><span lang="ru">Родитель, комментарий в Instagram</span></figcaption></figure>
-      <figure class="rev rv"><blockquote><span lang="ru">«Вадим крутой тренер. Рекомендую!»</span><span lang="en">“Vadym is an awesome coach. Highly recommend!”</span></blockquote><figcaption><span lang="en">Parent, Instagram comment (translated from Russian)</span><span lang="ru">Родитель, комментарий в Instagram</span></figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>We are very happy with the training at this soccer school! There are two professional coaches who truly know what they’re doing — they offer a personalized approach, smart training, and great motivation. What impressed us the most is that they use the Dutch training system…</blockquote><figcaption>Yuliya S · Google</figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Були в Connection и Hammers, намного лучше обучение и тренера с огромными знаниями и европейским опытом. Нигде такого не найдете</blockquote><figcaption>Максим Коваленко · Google</figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>The best football academy! Coach Vadym is the best at what he does. My son is thrilled. I’ve watched training sessions and matches many times, and I can say that Vadym is a master of his craft.</blockquote><figcaption>Andrii Davydov · Google</figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Это лучшая академия в Чикаго! Вадим и Вова лучшие тренеры, они профессионалы в своём деле. Мои дети за полгода — результат супер.</blockquote><figcaption>Кундуз Джазыкбекова · Google</figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Great football group! My son happily attends every training session. The coaches are very professional, know how to connect with kids, and keep them motivated. In a short time, my child has noticeably improved his skills.</blockquote><figcaption>Азиза Заирова · Google</figcaption></figure>
+      <figure class="rev rv"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>Прекрасный футбольный клуб! Мой ребенок очень доволен, заинтересован в спорте, благодарю за такую ответственную работу тренера ❤️</blockquote><figcaption>Kateryna Polishchuk · Google</figcaption></figure>
     </div>
+    <p class="rev-more"><a class="btn btn-line" href="https://www.google.com/maps/place/StaticX+Soccer+Academy/@42.0018681,-88.0108521,17z/data=!4m8!3m7!1s0x880fb10a967f933d:0x19d48e8ded2e777c!8m2!3d42.0018681!4d-88.0108521!9m1!1b1!16s%2Fg%2F11xnznygf6" target="_blank" rel="noopener"><span lang="en">Read all 21 reviews on Google</span><span lang="ru">Все 21 отзыв в Google</span></a></p>
   </div>
 </section>
 
@@ -532,12 +552,12 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     <p class="eyebrow" style="text-align:center"><span lang="en">Parents ask</span><span lang="ru">Вопросы родителей</span></p>
     <h2 style="text-align:center"><span lang="en">Quick answers</span><span lang="ru">Коротко о главном</span></h2>
     <div class="faq">
-      <details><summary><span lang="en">How much does it cost?</span><span lang="ru">Сколько стоит?</span></summary><p><span lang="en">The first session is free. After it, the coach suggests a group or 1-on-1 format for your child and tells you the price in person.</span><span lang="ru">Первая тренировка бесплатна. После неё тренер подскажет формат — группа или индивидуально — и назовёт стоимость на месте.</span></p></details>
+      <details><summary><span lang="en">How much does it cost?</span><span lang="ru">Сколько стоит?</span></summary><p><span lang="en">Free.</span><span lang="ru">Бесплатно.</span></p></details>
       <details><summary><span lang="en">What ages do you take?</span><span lang="ru">С какого возраста?</span></summary><p><span lang="en">Kids from 5 to 13. Elk Grove Village has three groups: U-8, U9–U11 and U-11+. Rolling Meadows has two: U5–8 and U8–10.</span><span lang="ru">Дети от 5 до 13 лет. В Elk Grove Village три группы: U-8, U9–U11 и U-11+. В Rolling Meadows две: U5–8 и U8–10.</span></p></details>
       <details><summary><span lang="en">My child has never played. Is that OK?</span><span lang="ru">Ребёнок никогда не играл. Можно?</span></summary><p><span lang="en">Yes. We start from the basics and plan every session around the player's level, so beginners settle in fast.</span><span lang="ru">Да. Начинаем с основ и строим тренировку под уровень игрока, поэтому новички быстро втягиваются.</span></p></details>
       <details><summary><span lang="en">Do you do 1-on-1 training?</span><span lang="ru">Есть индивидуальные тренировки?</span></summary><p><span lang="en">Yes, we offer 1-on-1 sessions and small groups. Ask us on WhatsApp and we'll find a time.</span><span lang="ru">Да, есть индивидуальные занятия и мини-группы. Напишите в WhatsApp, подберём время.</span></p></details>
       <details><summary><span lang="en">What happens in winter?</span><span lang="ru">А зимой?</span></summary><p><span lang="en">The indoor season is on, so sessions run whatever the weather.</span><span lang="ru">Сейчас сезон в зале, поэтому тренировки идут при любой погоде.</span></p></details>
-      <details><summary><span lang="en">What should we bring?</span><span lang="ru">Что взять с собой?</span></summary><p><span lang="en">Indoor soccer shoes (turf or futsal), a water bottle and a size 3 ball.</span><span lang="ru">Обувь для зала (turf или футзалки), воду и мяч 3-го размера.</span></p></details>
+      <details><summary><span lang="en">What should we bring?</span><span lang="ru">Что взять с собой?</span></summary><p><span lang="en">Turf or futsal shoes, a water bottle and a size 3 ball.</span><span lang="ru">Turf or futsal shoes, воду и мяч 3-го размера.</span></p></details>
       <details><summary><span lang="en">Can parents watch?</span><span lang="ru">Можно ли родителям смотреть?</span></summary><p><span lang="en">Yes, you're welcome to stay and watch the session.</span><span lang="ru">Да, вы можете остаться и посмотреть тренировку.</span></p></details>
       <div class="faq-more">
         <p><span lang="en">Didn't find your answer? Message us on WhatsApp, we usually reply the same day.</span><span lang="ru">Не нашли ответ? Напишите нам в WhatsApp, обычно отвечаем в тот же день.</span></p>
@@ -750,7 +770,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
     document.getElementById('th-place').textContent=placeTxt;
     var rt=document.getElementById('th-route');rt.hidden=!place;if(place)rt.href=place.map;
     var gc=document.getElementById('th-gcal'),ic=document.getElementById('th-ics');gc.hidden=ic.hidden=!x;
-    if(x){var title='StaticX — free soccer session ('+child+')',det='Group '+group+'. Bring indoor soccer shoes (turf or futsal), water and a size 3 ball. WhatsApp: +1 224-713-8550';
+    if(x){var title='StaticX — free soccer session ('+child+')',det='Group '+group+'. Bring turf or futsal shoes, water and a size 3 ball. WhatsApp: +1 224-713-8550';
       gc.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+calDate(x.date,x.from)+'/'+calDate(x.date,x.to)+'&ctz=America/Chicago&location='+encodeURIComponent(x.place.name)+'&details='+encodeURIComponent(det);
       var esc=function(v){return v.replace(/\\/g,'\\\\').replace(/[,;]/g,'\\$&')};
       var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//StaticX//Booking//EN','BEGIN:VEVENT','UID:'+Date.now()+'@staticx',
