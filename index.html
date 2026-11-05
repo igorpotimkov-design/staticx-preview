@@ -742,7 +742,7 @@ footer{background:var(--navy-2);color:rgba(255,255,255,.8);padding:56px 0 110px;
 
   function calDate(date,hm){return iso(date).replace(/-/g,'')+'T'+hm.replace(':','')+'00'}
   var sending=false,formStart=0;
-  form.addEventListener('focusin',function(){if(!formStart)formStart=Date.now()});
+  ['pointerdown','touchstart','keydown','input','change','focusin'].forEach(function(t){form.addEventListener(t,function(){if(!formStart)formStart=Date.now()},{passive:true})}); // таймер ловушки — с первого касания формы (на iPhone кнопки не получают фокус)
   form.addEventListener('submit',function(ev){
     ev.preventDefault();if(sending)return;
     if(form.company.value)return;               // a spam bot filled the hidden field
